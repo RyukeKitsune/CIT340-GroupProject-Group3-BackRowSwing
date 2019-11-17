@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-//And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.
+//And be not conformed to this world: but be ye transformed by the renewing of
+//your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.
 //(Romans 12:2 KJV)
 
 public class PlayerController : MonoBehaviour
@@ -12,8 +13,16 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float health;
     public float jumpHeight;
+    public float fireRate;
+
     bool canJump;
+    bool canFire;
+
+    Vector2 direction;
+
     Transform playerFeet;
+    public Weapon equipped;
+
     Rigidbody2D rb;
     SpriteRenderer sr;
     Animator anim;
@@ -24,6 +33,7 @@ public class PlayerController : MonoBehaviour
         playerFeet = transform.GetChild(0);
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        canFire = true;
     }
 
     // Update is called once per frame
@@ -31,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         float jumpValue = Input.GetAxis("Jump");
+        float fire = Input.GetAxis("Fire1");
 
         if (moveX != 0)
         {
@@ -38,9 +49,18 @@ public class PlayerController : MonoBehaviour
             anim.SetInteger("AnimState", 2);
 
             if (moveX > 0)
-                sr.flipX = true;
+            {
+                //sr.flipX = true;
+                gameObject.transform.rotation = Quaternion.Euler(0, 180f, 0);
+                direction = transform.right;
+            }
             else
-                sr.flipX = false;
+            {
+                //sr.flipX = false;
+                gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                direction = transform.right;
+
+            }
 
 
         }
@@ -64,10 +84,29 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (fire > 0 && canFire)
+        {
+            canFire = false;
+            GameObject bullet = 
+            Instantiate(equipped.GetProjectile().gameObject, equipped.transform.position, equipped.transform.rotation);
+            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-direction.x * equipped.GetProjectile().GetSpeed(), 0);
+            Invoke("AllowShooting", 1 / fireRate);
+        }
+
         if (health <= 0)
         {
             SceneManager.LoadScene("MainMenu");
         }
+    }
+
+    public Vector2 GetDirection()
+    {
+        return direction;
+    }
+
+    void AllowShooting()
+    {
+        canFire = true;
     }
 
     private void FixedUpdate()
