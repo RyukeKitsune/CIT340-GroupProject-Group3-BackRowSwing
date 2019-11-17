@@ -159,6 +159,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6fcb5db3eff8a4ea5b28dff1269fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBody: {fileID: 48841684950146367, guid: 64a7eee63a604f146842547e826d52db,
+    type: 3}
+  rb2: {fileID: 7020284186230267, guid: 64a7eee63a604f146842547e826d52db, type: 3}
+  health: 15
+  dmg: 5
+  target: {fileID: 52521358403518909, guid: 64a7eee63a604f146842547e826d52db, type: 3}
+  self: {fileID: 6069527288298699139}
+  moveDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &7448133203216837309
 GameObject:
   m_ObjectHideFlags: 0

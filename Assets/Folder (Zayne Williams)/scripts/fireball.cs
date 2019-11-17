@@ -28,6 +28,7 @@ public class fireball : MonoBehaviour
             if (collision.gameObject.GetComponent<PlayerController>() != null)
             {
                 collision.gameObject.GetComponent<PlayerController>().ChangeHealth(-dmg);
+
             }
         }
     }
