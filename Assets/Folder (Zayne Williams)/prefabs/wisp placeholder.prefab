@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa1ead3c31e4234ebc3552d79ad4d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 52521358403518909, guid: 64a7eee63a604f146842547e826d52db, type: 3}
   speed: 1
   range: 5
 --- !u!114 &1352265088597483556
@@ -199,7 +199,7 @@ MonoBehaviour:
   fireBall: {fileID: 4332496034014691692, guid: dd07feb810cc8354599440915feb3a94,
     type: 3}
   firePoint: {fileID: 1352265087047099738}
-  target: {fileID: 0}
+  target: {fileID: 52521358403518909, guid: 64a7eee63a604f146842547e826d52db, type: 3}
   self: {fileID: 1352265088597483567}
   fireRange: 6
   health: 4

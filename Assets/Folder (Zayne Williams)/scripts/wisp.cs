@@ -13,6 +13,7 @@ public class wisp : MonoBehaviour
     public Transform self;
     public float fireRange = 10;
     public int health = 4;
+    public int dmg = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,15 +26,15 @@ public class wisp : MonoBehaviour
     {
         canFire = true;
     }
-    /* public void ChangeHealth(int change)
-     {
-         health += change;
+    public void ChangeHealth(int change)
+    {
+        health += change;
 
-         if (health <= 0)
-         {
-             Destroy(gameObject);
-         }
-     }*/
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -55,4 +56,18 @@ public class wisp : MonoBehaviour
             }
         }
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.GetComponent<Projectile>() != null)
+        {
+            ChangeHealth(-5);
+            Destroy(collision.gameObject);
+            if (collision.gameObject.GetComponent<PlayerController>() != null)
+            {
+                collision.gameObject.GetComponent<PlayerController>().ChangeHealth(-dmg);
+            }
+        }
+    }
+
 }

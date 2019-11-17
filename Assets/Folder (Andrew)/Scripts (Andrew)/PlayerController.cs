@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         if (jumpValue > 0)
         {
             //Need to fix this, so for now you can fly
-            Collider2D[] collisions = Physics2D.OverlapBoxAll(playerFeet.position, new  Vector2(playerFeet.position.x, playerFeet.position.y), 180);
+            Collider2D[] collisions = Physics2D.OverlapBoxAll(playerFeet.position, new Vector2(playerFeet.position.x, playerFeet.position.y), 180);
 
             for (int i = 0; i < collisions.Length; ++i)
             {
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         if (fire > 0 && canFire)
         {
             canFire = false;
-            GameObject bullet = 
+            GameObject bullet =
             Instantiate(equipped.GetProjectile().gameObject, equipped.transform.position, equipped.transform.rotation);
             bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-direction.x * equipped.GetProjectile().GetSpeed(), 0);
             Invoke("AllowShooting", 1 / fireRate);
@@ -124,5 +124,10 @@ public class PlayerController : MonoBehaviour
         {
             health -= 1;
         }
+    }
+    public void ChangeHealth(int change)
+    {
+        health += change;
+
     }
 }

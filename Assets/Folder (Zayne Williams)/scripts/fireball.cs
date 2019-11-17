@@ -6,6 +6,7 @@ public class fireball : MonoBehaviour
 {
     public float speed = 5;
     public float lifeTime = 3;
+    public int dmg = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,10 @@ public class fireball : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
             Destroy(gameObject);
-            collision.gameObject.GetComponent<PlayerController>();
-
+            if (collision.gameObject.GetComponent<PlayerController>() != null)
+            {
+                collision.gameObject.GetComponent<PlayerController>().ChangeHealth(-dmg);
+            }
         }
     }
     void Die()
