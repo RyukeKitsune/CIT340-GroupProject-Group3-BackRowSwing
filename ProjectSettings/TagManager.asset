@@ -6,6 +6,8 @@ TagManager:
   tags:
   - EnemyBullet
   - enemy
+  - ground
+  - floating enemies
   layers:
   - Default
   - TransparentFX
@@ -17,10 +19,10 @@ TagManager:
   - 
   - EnemyBullets
   - Enemy
-  - 
-  - 
-  - 
-  - 
+  - floating enemy
+  - player
+  - player bullet
+  - ground
   - 
   - 
   - 

@@ -2,19 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class undead : MonoBehaviour
+public class Reaper : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public GameObject playerBody;
-    public Rigidbody2D rb2;
-    private PlayerController player;
+  
     public int health = 15;
     public int dmg = 5;
     public Transform target;
-    public Transform self;
-    public Vector2 moveDirection;
-
-
+    public float ammount = 0.2f;
     public void ChangeHealth(int change)
     {
         health += change;
@@ -24,7 +18,6 @@ public class undead : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
 
@@ -35,20 +28,15 @@ public class undead : MonoBehaviour
         }
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
-            moveDirection = self.transform.position - target.transform.position;
+           
             collision.gameObject.GetComponent<PlayerController>().ChangeHealth(-dmg);
-            rb.AddForce(moveDirection.normalized * 400f);
+            gameObject.transform.position = (target.transform.position + target.transform.position * ammount);
         }
     }
-
     // Start is called before the first frame update
     void Start()
     {
-        rb2 = playerBody.GetComponent<Rigidbody2D>();
-        rb = GetComponent<Rigidbody2D>();
-        player = GetComponent<PlayerController>();
         target = FindObjectOfType<PlayerController>().transform;
-        self = FindObjectOfType<undead>().transform;
 
     }
 

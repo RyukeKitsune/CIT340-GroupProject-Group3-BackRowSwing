@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354832911}
   - component: {fileID: 1354832912}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Equipped
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 46354382161018691}
   - component: {fileID: 31951785303959831}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GroundSensor
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 32115767717183753}
   - component: {fileID: 3988630019032592893}
   - component: {fileID: 2816951919117478046}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LightBandit
   m_TagString: Player
   m_Icon: {fileID: 0}
