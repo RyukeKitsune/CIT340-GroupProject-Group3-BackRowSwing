@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 1
-  range: 10
+  speed: 0.6
+  range: 7
 --- !u!114 &8753604307597918197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0276cee3f6a0be44b6ea48c0b48ee8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
-  dmg: 5
+  health: 30
+  dmg: 15
   target: {fileID: 52521358403518909, guid: 64a7eee63a604f146842547e826d52db, type: 3}
   ammount: 0.5
