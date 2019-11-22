@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1352265087047099736}
   - component: {fileID: 1352265087047099737}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 1352265088597483562}
   - component: {fileID: 1352265088597483563}
   - component: {fileID: 1352265088597483556}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: wisp placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 52521358403518909, guid: 64a7eee63a604f146842547e826d52db, type: 3}
   speed: 1
-  range: 5
+  range: 30
 --- !u!114 &1352265088597483556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,3 +203,4 @@ MonoBehaviour:
   self: {fileID: 1352265088597483567}
   fireRange: 6
   health: 4
+  dmg: 2
