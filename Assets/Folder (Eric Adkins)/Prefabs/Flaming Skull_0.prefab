@@ -219,9 +219,9 @@ MonoBehaviour:
   attackSpeed: 0.5
   fireBall: {fileID: 4332496034014691692, guid: dd07feb810cc8354599440915feb3a94,
     type: 3}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 4109369624766186910}
   target: {fileID: 52521358403518909, guid: 64a7eee63a604f146842547e826d52db, type: 3}
-  self: {fileID: 0}
+  self: {fileID: 4109369625440508334}
   fireRange: 6
   health: 4
   dmg: 2
