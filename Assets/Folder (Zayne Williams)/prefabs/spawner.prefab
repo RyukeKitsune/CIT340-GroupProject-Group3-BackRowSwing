@@ -505,7 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawn1: {fileID: 4632355178031302581, guid: 8ed7ffd16ae07584d96adadf96613fbc,
     type: 3}
-  enemySpawn2: {fileID: 1352265088597483557, guid: 2685cecd22a16c74a83161c5ad263e95,
+  enemySpawn2: {fileID: 2276561577374609089, guid: d00f251fe44ba974aa6e85ce5bdb3f95,
     type: 3}
   enemySpawn3: {fileID: 8753604307597918191, guid: a37264332afecf7449417ba0f3e55114,
     type: 3}
