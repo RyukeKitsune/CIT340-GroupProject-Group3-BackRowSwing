@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1354832911}
-  - component: {fileID: 1354832912}
   m_Layer: 11
   m_Name: Equipped
   m_TagString: Untagged
@@ -31,19 +30,6 @@ Transform:
   m_Father: {fileID: 52521358403518909}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1354832912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354832910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6723882f0cd53b4fa0b339c540fa7a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  proj: {fileID: 4098938987826264801, guid: bb89323d7350d824cb1fbaf1c77a4fad, type: 3}
 --- !u!1 &48803118795943785
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 46354382161018691}
   - component: {fileID: 31951785303959831}
+  - component: {fileID: 12540255}
   m_Layer: 11
   m_Name: GroundSensor
   m_TagString: Player
@@ -101,6 +88,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.03}
   m_EdgeRadius: 0
+--- !u!114 &12540255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48803118795943785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe9fcd1a0f4e914994378a14c984f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &48841684950146367
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +221,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.4
+  m_GravityScale: 0.8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -268,9 +267,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   health: 10
-  jumpHeight: 100
+  jumpHeight: 50
   fireRate: 2
-  equipped: {fileID: 1354832912}
+  playerFeet: {fileID: 0}
+  equipped: {fileID: 0}
+  proj: {fileID: 0}
 --- !u!114 &2816951919117478046
 MonoBehaviour:
   m_ObjectHideFlags: 0
