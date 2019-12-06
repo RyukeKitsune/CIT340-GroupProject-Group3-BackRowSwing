@@ -20,8 +20,9 @@ public class PlayerController : MonoBehaviour
 
     Vector2 direction;
 
-    Transform playerFeet;
-    public Weapon equipped;
+    public Transform playerFeet;
+    public GameObject equipped;
+    public Projectile proj;
 
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
         playerFeet = transform.GetChild(0);
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        equipped = transform.GetChild(1).gameObject;
         canFire = true;
     }
 
@@ -40,7 +42,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float moveX = Input.GetAxis("Horizontal");
-        float jumpValue = Input.GetAxis("Jump");
         float fire = Input.GetAxis("Fire1");
 
         if (moveX != 0)
@@ -67,29 +68,10 @@ public class PlayerController : MonoBehaviour
         else
             anim.SetInteger("AnimState", 0);
 
-        if (jumpValue > 0)
-        {
-            //Need to fix this, so for now you can fly
-            Collider2D[] collisions = Physics2D.OverlapBoxAll(playerFeet.position, new Vector2(playerFeet.position.x, playerFeet.position.y), 180);
-
-            for (int i = 0; i < collisions.Length; ++i)
-            {
-                if (collisions[i].gameObject != gameObject)
-                {
-                    canJump = true;
-                    //Debug.Log(canJump);
-                    break;
-                }
-
-            }
-        }
-
-        if (fire > 0 && canFire)
+        if (fire > 0 && canFire && equipped != null)
         {
             canFire = false;
-            GameObject bullet =
-            Instantiate(equipped.GetProjectile().gameObject, equipped.transform.position, equipped.transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-direction.x * equipped.GetProjectile().GetSpeed(), 0);
+            equipped.GetComponent<Weapon>().Fire();
             Invoke("AllowShooting", 1 / fireRate);
         }
 
@@ -109,14 +91,32 @@ public class PlayerController : MonoBehaviour
         canFire = true;
     }
 
-    private void FixedUpdate()
+    void Jump()
     {
+        Debug.Log("In Jump");
         if (canJump)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(new Vector2(0, jumpHeight));
             canJump = false;
+            rb.AddForce(new Vector2(0, jumpHeight));
         }
+
+    }
+
+    public GameObject GetEquipped()
+    {
+        return equipped;
+            
+    }
+
+
+    private void FixedUpdate()
+    {
+        float jumpValue = Input.GetAxis("Jump");
+
+        if (jumpValue > 0)
+            Jump();
+
+        canJump = playerFeet.GetComponent<Jumping>().CanJump();
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -125,6 +125,20 @@ public class PlayerController : MonoBehaviour
             health -= 1;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Pickup")
+        {
+            equipped = collision.gameObject;
+            equipped.GetComponent<SpriteRenderer>().sprite = collision.GetComponent<SpriteRenderer>().sprite;
+            proj = equipped.GetComponent<Weapon>().proj;
+            //Destroy(collision.gameObject);
+
+        }
+
+    }
+
     public void ChangeHealth(int change)
     {
         health += change;
