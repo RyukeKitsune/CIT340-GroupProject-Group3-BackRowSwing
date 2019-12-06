@@ -10,7 +10,8 @@ public class Projectile : MonoBehaviour
 {
     public float speed;
     public float damage;
-    public float lifeTime;
+
+    Rigidbody2D rb;
     
     public float GetDamage()
     {
@@ -23,26 +24,15 @@ public class Projectile : MonoBehaviour
         return speed;
     }
 
-    public Projectile GetProjectile()
-    {
-        return this;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Die", lifeTime);
+        rb = GetComponent<Rigidbody2D>();
         //rb.velocity = new Vector2(speed, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
     }
 }
