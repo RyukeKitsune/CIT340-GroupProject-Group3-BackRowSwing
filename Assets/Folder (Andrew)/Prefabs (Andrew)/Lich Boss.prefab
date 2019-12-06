@@ -144,7 +144,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magicBolt: {fileID: 3612051189532821212, guid: d9899ec0aeb3ca449bdce2d2f36509f2,
     type: 3}
-  attack2: {fileID: 4233811736275203468, guid: e584b2957d1d4164ba288b1ae55d5cd6, type: 3}
+  magicPortal: {fileID: 4233811736275203468, guid: e584b2957d1d4164ba288b1ae55d5cd6,
+    type: 3}
   attack3: {fileID: 0}
+  targetPlayer: {fileID: 48841684950146367, guid: 64a7eee63a604f146842547e826d52db,
+    type: 3}
   attackWait: 3
   attack1Speed: 5

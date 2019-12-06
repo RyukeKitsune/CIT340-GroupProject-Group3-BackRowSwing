@@ -11,8 +11,9 @@ using UnityEngine;
 public class LichBoss : MonoBehaviour
 {
     public GameObject magicBolt;
-    public GameObject attack2;
+    public GameObject magicPortal;
     public GameObject attack3;
+    public GameObject targetPlayer;
 
     public float attackWait;
     public float attack1Speed;
@@ -23,6 +24,8 @@ public class LichBoss : MonoBehaviour
     void Start()
     {
         canAttack = true;
+        if (targetPlayer == null)
+            targetPlayer = FindObjectOfType<PlayerController>().gameObject;
     }
 
     // Update is called once per frame
@@ -31,7 +34,7 @@ public class LichBoss : MonoBehaviour
 
         if (canAttack)
         {
-            MagicBolt();
+            MagicPortal();
             Invoke("AllowAttack", attackWait);
         }
 
@@ -47,6 +50,19 @@ public class LichBoss : MonoBehaviour
         GameObject bolt;
         bolt = Instantiate(magicBolt, transform.position, transform.rotation);
         bolt.GetComponent<Rigidbody2D>().AddForce(new Vector2(attack1Speed * Time.deltaTime, 0));
+        Invoke("Die", 4);
         canAttack = false;
+    }
+
+    void MagicPortal()
+    {
+        GameObject portal;
+        portal = Instantiate(magicPortal, targetPlayer.transform.position + new Vector3(Random.Range(-2, 2), 0, 0), transform.rotation);
+        canAttack = false;
+    }
+
+    void Die(GameObject g)
+    {
+        Destroy(g);
     }
 }
