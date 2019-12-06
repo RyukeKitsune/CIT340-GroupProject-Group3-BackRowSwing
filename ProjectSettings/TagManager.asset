@@ -8,6 +8,8 @@ TagManager:
   - enemy
   - ground
   - floating enemies
+  - Pickup
+  - Weapon
   layers:
   - Default
   - TransparentFX
