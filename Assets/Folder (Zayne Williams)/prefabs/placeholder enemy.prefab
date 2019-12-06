@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 8583872059762618561}
   - component: {fileID: 7698887805029264582}
   - component: {fileID: 1278808830846355246}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: placeholder enemy
-  m_TagString: EnemyBullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: c95dbc5055c201c4684b2e56d1eac600, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 3
+  distance: 0.5
   groundDetection: {fileID: 7820446387861189316}
 --- !u!61 &8583872059762618561
 BoxCollider2D:
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7820446387861189316}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundDetection
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -191,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7448133203216837309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.95, y: -1.23, z: -1.7074945}
+  m_LocalPosition: {x: 1.44, y: -0.5, z: -1.7074945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6069527288298699139}

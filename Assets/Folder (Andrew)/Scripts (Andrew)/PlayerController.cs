@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-//And be not conformed to this world: but be ye transformed by the renewing of
-//your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.
-//(Romans 12:2 KJV)
+// And be not conformed to this world: but be ye transformed by the renewing of
+// your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.
+// (Romans 12:2 KJV)
 
 public class PlayerController : MonoBehaviour
 {
@@ -68,11 +68,14 @@ public class PlayerController : MonoBehaviour
         else
             anim.SetInteger("AnimState", 0);
 
-        if (fire > 0 && canFire && equipped != null)
+        if (fire > 0 && canFire)
         {
-            canFire = false;
-            equipped.GetComponent<Weapon>().Fire();
-            Invoke("AllowShooting", 1 / fireRate);
+            if (equipped != transform.GetChild(1).gameObject)
+            {
+                canFire = false;
+                equipped.GetComponent<Weapon>().Fire();
+                Invoke("AllowShooting", 1 / fireRate);
+            }
         }
 
         if (health <= 0)

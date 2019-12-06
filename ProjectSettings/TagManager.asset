@@ -10,6 +10,7 @@ TagManager:
   - floating enemies
   - Pickup
   - Weapon
+  - killbox
   layers:
   - Default
   - TransparentFX

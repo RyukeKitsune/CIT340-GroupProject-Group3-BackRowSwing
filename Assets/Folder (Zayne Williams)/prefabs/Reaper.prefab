@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: d16e9ca3eee9b734a9d3cfd7d130db1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 0.6
-  range: 7
+  range: 10
 --- !u!114 &8753604307597918197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   self: {fileID: 8753604307597918196}
   telerange: 15
   teleportDelay: 0.1
-  ammount: 0.5
+  ammount: 1
 --- !u!114 &8753604307597918198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0276cee3f6a0be44b6ea48c0b48ee8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  health: 25
   dmg: 15
   target: {fileID: 52521358403518909, guid: 64a7eee63a604f146842547e826d52db, type: 3}
-  ammount: 0.5
+  ammount: 2

@@ -15,14 +15,14 @@ public class RandomizedSpawner : MonoBehaviour
     public GameObject wispspawn2;
     public GameObject reaperspawn1;
 
-    public Transform target;
-    public float range = 15;
+   // public Transform target;
+   // public float range = 15;
     public float spawnSpeed = 6;
     int spawnEnemy;
     // Start is called before the first frame update
     void Start()
     {
-        target = FindObjectOfType<PlayerController>().transform;
+       // target = FindObjectOfType<PlayerController>().transform;
         Invoke("Spawn", spawnSpeed);
         StartCoroutine(IncreaseDifficulty());
 
@@ -58,7 +58,7 @@ public class RandomizedSpawner : MonoBehaviour
             Instantiate(spawnPrefab, reaperspawn1.transform.position, reaperspawn1.transform.rotation);
         }
         Invoke("Spawn", spawnSpeed);
-       // Debug.Log(spawnRange);
+       Debug.Log(spawnRange);
     }
     IEnumerator IncreaseDifficulty()
     {

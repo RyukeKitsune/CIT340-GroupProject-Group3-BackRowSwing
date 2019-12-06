@@ -37,7 +37,7 @@ public class undead : MonoBehaviour
         {
             moveDirection = self.transform.position - target.transform.position;
             collision.gameObject.GetComponent<PlayerController>().ChangeHealth(-dmg);
-            rb.AddForce(moveDirection.normalized * 400f);
+            rb.AddForce(moveDirection.normalized * 60f);
         }
     }
 
