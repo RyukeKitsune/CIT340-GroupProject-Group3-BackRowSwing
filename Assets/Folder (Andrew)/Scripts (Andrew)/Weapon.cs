@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// There is no fear in love; but perfect love casteth out fear: 
-// because fear hath torment. He that feareth is not made perfect in love.
-// We love him, because he first loved us.
-// (1 John 4:18-19 KJV)
+// I will praise thee; for I am fearfully and wonderfully made: 
+// marvellous are thy works; and that my soul knoweth right well.
+// (Psalms 139:14 KJV)
 
 public class Weapon : MonoBehaviour
 {
