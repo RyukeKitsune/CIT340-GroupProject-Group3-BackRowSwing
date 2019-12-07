@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4795566145616229189
+--- !u!1 &491374201123290022
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4795566145616229209}
-  - component: {fileID: 4795566145616229208}
-  - component: {fileID: 4795566145616229211}
-  - component: {fileID: 4795566145616229210}
-  - component: {fileID: 731711570178973451}
-  m_Layer: 12
-  m_Name: Bolt
-  m_TagString: Bullet
+  - component: {fileID: 491374201123290018}
+  - component: {fileID: 491374201123290017}
+  - component: {fileID: 491374201123290016}
+  - component: {fileID: 491374201123290023}
+  - component: {fileID: 491374201123290019}
+  m_Layer: 0
+  m_Name: Lich Boss
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4795566145616229209
+--- !u!4 &491374201123290018
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795566145616229189}
+  m_GameObject: {fileID: 491374201123290022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.397994, y: -2.4600484, z: 0}
-  m_LocalScale: {x: 3.2554562, y: 3.2554562, z: 3.2554562}
+  m_LocalPosition: {x: 3.089, y: -2.887, z: -0.37265626}
+  m_LocalScale: {x: 0.993, y: 1.03, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4795566145616229208
+--- !u!212 &491374201123290017
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795566145616229189}
+  m_GameObject: {fileID: 491374201123290022}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,46 +71,46 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: fdf584f36479f434ab0a41fc7676edef, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.063366175, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: faec8b309a13fa94ab34b7e790aebc17, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.09, y: 0.09}
+  m_Size: {x: 3.04, y: 2.83}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4795566145616229211
+--- !u!50 &491374201123290016
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795566145616229189}
-  m_BodyType: 1
+  m_GameObject: {fileID: 491374201123290022}
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_Mass: 10
+  m_LinearDrag: 10
+  m_AngularDrag: 10
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
---- !u!58 &4795566145616229210
-CircleCollider2D:
+  m_Constraints: 4
+--- !u!61 &491374201123290023
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795566145616229189}
+  m_GameObject: {fileID: 491374201123290022}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -118,20 +118,41 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.04, y: 2.83}
+    newSize: {x: 3.04, y: 2.83}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.045
---- !u!114 &731711570178973451
+  m_Size: {x: 3.04, y: 2.83}
+  m_EdgeRadius: 0
+--- !u!114 &491374201123290019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795566145616229189}
+  m_GameObject: {fileID: 491374201123290022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8a3451020b728459b5ce9ff638af4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0aa034fc38768984cbd00e595a599a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  damage: 1
-  lifeTime: 2
+  magicBolt: {fileID: 3612051189532821212, guid: d9899ec0aeb3ca449bdce2d2f36509f2,
+    type: 3}
+  magicPortal: {fileID: 4233811736275203468, guid: e584b2957d1d4164ba288b1ae55d5cd6,
+    type: 3}
+  attack3: {fileID: 0}
+  targetPlayer: {fileID: 48841684950146367, guid: 64a7eee63a604f146842547e826d52db,
+    type: 3}
+  floor: {fileID: 0}
+  attackWait: 3
+  attack1Speed: 500
+  attack2Lifetime: 15
+  attack2Charge: 5
+  portalPull: 10
+  health: 100

@@ -11,6 +11,7 @@ TagManager:
   - Pickup
   - Weapon
   - killbox
+  - Bullet
   layers:
   - Default
   - TransparentFX

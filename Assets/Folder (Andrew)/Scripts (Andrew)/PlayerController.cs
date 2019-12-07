@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float health;
     public float jumpHeight;
     public float fireRate;
+    public float numJumps;
 
     bool canJump;
     bool canFire;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         equipped = transform.GetChild(1).gameObject;
+        numJumps = playerFeet.GetComponent<Jumping>().maxJumps;
         canFire = true;
     }
 
@@ -82,6 +84,14 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
+
+        float jumpValue = Input.GetAxis("Jump");
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            Jump();
+
+        canJump = playerFeet.GetComponent<Jumping>().CanJump();
+        numJumps = playerFeet.GetComponent<Jumping>().NumJumps();
     }
 
     public Vector2 GetDirection()
@@ -96,10 +106,10 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        Debug.Log("In Jump");
-        if (canJump)
+        if (numJumps > 0)
         {
             canJump = false;
+            playerFeet.GetComponent<Jumping>().numJumps -= 1;
             rb.AddForce(new Vector2(0, jumpHeight));
         }
 
@@ -114,18 +124,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float jumpValue = Input.GetAxis("Jump");
 
-        if (jumpValue > 0)
-            Jump();
-
-        canJump = playerFeet.GetComponent<Jumping>().CanJump();
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "EnemyBullet")
         {
             health -= 1;
+            Destroy(col.gameObject);
         }
     }
 

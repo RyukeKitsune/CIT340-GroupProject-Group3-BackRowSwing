@@ -24,22 +24,32 @@ using UnityEngine;
 public class Jumping : MonoBehaviour
 {
     Transform feet;
+    public int numJumps;
+    public int maxJumps;
     bool canJump;
 
     // Start is called before the first frame update
     void Start()
     {
         feet = FindObjectOfType<PlayerController>().gameObject.transform.GetChild(0);
+        maxJumps = 2;
+        numJumps = 2;
     }
 
     // Update is called once per frame
     void Update()
     {
+
     }
 
     public bool CanJump()
     {
         return canJump;
+    }
+
+    public int NumJumps()
+    {
+        return numJumps;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,9 +58,9 @@ public class Jumping : MonoBehaviour
         {
             Debug.Log("Trigger Entering");
             canJump = true;
+            numJumps = maxJumps;
         }
     }
-
 
     private void OnTriggerExit2D(Collider2D collision)
     {
