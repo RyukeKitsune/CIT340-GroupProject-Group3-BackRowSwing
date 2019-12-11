@@ -12,6 +12,7 @@ TagManager:
   - Weapon
   - killbox
   - Bullet
+  - Boss
   layers:
   - Default
   - TransparentFX
