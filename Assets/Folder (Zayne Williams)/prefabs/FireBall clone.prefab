@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 849002693226852880}
   - component: {fileID: 4100719066240239077}
   - component: {fileID: 4887976979363347041}
+  - component: {fileID: 1619264091}
   m_Layer: 8
   m_Name: FireBall clone
   m_TagString: EnemyBullet
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4332496034014691692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.728369, y: 2.6953654, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.43466, y: 3.43466, z: 3.43466}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: f361f127e3c8a77418985abad2fcaa3e, type: 3}
+  m_Sprite: {fileID: -6607481912129624618, guid: d55464562bba50342a435ad955f54aa0,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,9 +113,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.04}
+  m_Offset: {x: 0.0040135803, y: -0.01591884}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.12809473
 --- !u!50 &4887976979363347041
 Rigidbody2D:
   serializedVersion: 4
@@ -135,3 +137,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1619264091
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4332496034014691692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 14f44df09268e8b45affe3dfc017d3c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

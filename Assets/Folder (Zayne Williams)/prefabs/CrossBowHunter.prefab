@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe9fcd1a0f4e914994378a14c984f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numJumps: 0
+  maxJumps: 0
 --- !u!1 &2307449305736334173
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 2307449305736334173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.675165, y: -2.358861, z: 0}
-  m_LocalScale: {x: 4.1577, y: 4.1577, z: 4.1577}
+  m_LocalScale: {x: 8.207716, y: 8.207716, z: 8.207716}
   m_Children:
   - {fileID: 2309395236514752801}
   - {fileID: 458729496337818684}
@@ -269,6 +271,7 @@ MonoBehaviour:
   health: 45
   jumpHeight: 75
   fireRate: 2
+  numJumps: 0
   playerFeet: {fileID: 0}
   equipped: {fileID: 0}
   proj: {fileID: 0}
