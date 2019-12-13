@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4233811736275203466}
   - component: {fileID: 4233811736275203467}
   - component: {fileID: 1058729764791424198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Magic Portal
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}

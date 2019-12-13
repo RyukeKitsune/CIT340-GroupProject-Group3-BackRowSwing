@@ -140,10 +140,15 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Pickup")
         {
             equipped = collision.gameObject;
-            equipped.GetComponent<SpriteRenderer>().sprite = collision.GetComponent<SpriteRenderer>().sprite;
+            transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = collision.GetComponent<SpriteRenderer>().sprite;
             proj = equipped.GetComponent<Weapon>().proj;
             //Destroy(collision.gameObject);
 
+        }
+
+        if (collision.gameObject.tag == "EnemyBullet")
+        {
+            health -= 1;
         }
 
     }

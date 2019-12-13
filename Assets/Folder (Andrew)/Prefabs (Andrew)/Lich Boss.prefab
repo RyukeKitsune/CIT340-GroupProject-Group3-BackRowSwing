@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 491374201123290018}
   - component: {fileID: 491374201123290017}
   - component: {fileID: 491374201123290016}
-  - component: {fileID: 491374201123290023}
   - component: {fileID: 491374201123290019}
-  m_Layer: 0
+  - component: {fileID: 141207245}
+  m_Layer: 9
   m_Name: Lich Boss
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -97,39 +97,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 10
   m_LinearDrag: 10
-  m_AngularDrag: 10
-  m_GravityScale: 1
+  m_AngularDrag: 0.5
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &491374201123290023
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491374201123290022}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.04, y: 2.83}
-    newSize: {x: 3.04, y: 2.83}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.04, y: 2.83}
-  m_EdgeRadius: 0
+  m_Constraints: 5
 --- !u!114 &491374201123290019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,8 +125,24 @@ MonoBehaviour:
     type: 3}
   floor: {fileID: 0}
   attackWait: 3
-  attack1Speed: 500
-  attack2Lifetime: 15
+  attack1Speed: 200
+  attack2Lifetime: 10
   attack2Charge: 5
-  portalPull: 10
+  portalPull: 15
   health: 100
+--- !u!70 &141207245
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491374201123290022}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2.33, y: 3.05}
+  m_Direction: 0

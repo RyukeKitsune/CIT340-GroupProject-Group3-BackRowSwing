@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3612051189532821215}
   - component: {fileID: -4968371642200412411}
   - component: {fileID: 1525374062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Magic Bolt
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
