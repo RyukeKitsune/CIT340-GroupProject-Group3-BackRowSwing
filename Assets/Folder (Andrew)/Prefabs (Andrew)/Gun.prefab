@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8106051740418191501}
   - component: {fileID: 3800266286699243701}
   - component: {fileID: 1566346542319634819}
-  - component: {fileID: -5632325016192573263}
+  - component: {fileID: 7074736562563126790}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Pickup
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2176245264565801621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8259852, y: -3.0062022, z: 0}
-  m_LocalScale: {x: 0.082, y: 0.082, z: 0.082}
+  m_LocalScale: {x: 3.274717, y: 3.274717, z: 3.274717}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   proj: {fileID: 4098938987826264801, guid: bb89323d7350d824cb1fbaf1c77a4fad, type: 3}
   owner: {fileID: 0}
---- !u!58 &-5632325016192573263
-CircleCollider2D:
+--- !u!61 &7074736562563126790
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,9 +106,19 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.02, y: 0.01}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 10.24, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 3
+  m_Size: {x: 0.22, y: 0.08}
+  m_EdgeRadius: 0
