@@ -20,7 +20,10 @@ public class PlayerController : MonoBehaviour
     bool canFire;
 
     Vector2 direction;
-
+    //Eric's additions
+    public GameObject HealthBox;
+    public Sprite Healthform1, Healthform2, Healthform3, Healthform4, Healthform5;
+    //end
     public Transform playerFeet;
     public GameObject equipped;
     public Projectile proj;
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        HealthBox = transform.GetChild(2).gameObject;
         rb = GetComponent<Rigidbody2D>();
         playerFeet = transform.GetChild(0);
         sr = GetComponent<SpriteRenderer>();
@@ -45,6 +49,9 @@ public class PlayerController : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         float fire = Input.GetAxis("Fire1");
+        //Update HP script by Eric
+        UpdateHP();
+        //end of eric addition
 
         if (moveX != 0)
         {
@@ -124,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -157,5 +164,29 @@ public class PlayerController : MonoBehaviour
     {
         health += change;
 
+    }
+    //Eric Addition for hp
+    public void UpdateHP()
+    {
+        if (health >= 50)
+        {
+            HealthBox.GetComponent<SpriteRenderer>().sprite = Healthform1;
+        }
+        else if (health >= 30 && health <= 49)
+        {
+            HealthBox.GetComponent<SpriteRenderer>().sprite = Healthform2;
+        }
+        else if (health >= 10 && health <= 29)
+        {
+            HealthBox.GetComponent<SpriteRenderer>().sprite = Healthform3;
+        }
+        else if (health > 0 && health <= 9)
+        {
+            HealthBox.GetComponent<SpriteRenderer>().sprite = Healthform4;
+        }
+        else if (health <= 0)
+        {
+            HealthBox.GetComponent<SpriteRenderer>().sprite = Healthform5;
+        }
     }
 }
