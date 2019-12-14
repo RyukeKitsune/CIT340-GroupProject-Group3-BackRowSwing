@@ -99,6 +99,12 @@ public class PlayerController : MonoBehaviour
 
         canJump = playerFeet.GetComponent<Jumping>().CanJump();
         numJumps = playerFeet.GetComponent<Jumping>().NumJumps();
+
+        if (canJump == true)
+        {
+            Grounded();
+            anim.SetFloat("AirSpeed", 1);
+        }
     }
 
     public Vector2 GetDirection()
@@ -113,11 +119,16 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        anim.SetFloat("AirSpeed", -1);
+        anim.SetBool("Jump", true);
+        anim.SetBool("Grounded", false);
+
         if (numJumps > 0)
         {
             canJump = false;
             playerFeet.GetComponent<Jumping>().numJumps -= 1;
             rb.AddForce(new Vector2(0, jumpHeight));
+            anim.SetBool("Jump", false);
         }
 
     }
@@ -126,6 +137,17 @@ public class PlayerController : MonoBehaviour
     {
         return equipped;
             
+    }
+
+    void HurtOff()
+    {
+        anim.SetBool("Hurt", false);
+    }
+
+    void Grounded()
+    {
+        anim.SetBool("Grounded", true);
+        anim.SetBool("Jump", false);
     }
 
 
@@ -138,6 +160,8 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "EnemyBullet")
         {
             health -= 1;
+            anim.SetBool("Hurt", true);
+            Invoke("HurtOff", 0.5f);
             Destroy(col.gameObject);
         }
     }
@@ -155,6 +179,8 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "EnemyBullet")
         {
+            anim.SetBool("Hurt", true);
+            Invoke("HurtOff", 0.5f);
             health -= 1;
         }
 

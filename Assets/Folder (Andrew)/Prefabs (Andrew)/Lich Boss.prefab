@@ -125,7 +125,7 @@ MonoBehaviour:
     type: 3}
   floor: {fileID: 0}
   attackWait: 3
-  attack1Speed: 200
+  attack1Speed: 20000
   attack2Lifetime: 10
   attack2Charge: 5
   portalPull: 15

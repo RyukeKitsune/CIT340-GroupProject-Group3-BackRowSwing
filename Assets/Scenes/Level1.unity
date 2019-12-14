@@ -2805,7 +2805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.615728, y: 4.50704, z: -22.071095}
+  m_LocalPosition: {x: -4.159925, y: 4.50704, z: -22.071095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5924,12 +5924,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnpoint: {fileID: 1020892813}
   weapon: {fileID: 571945023}
-  CrossbowHunter: {fileID: 2307449305736334173, guid: 7ea82d55a06d8f541b3e6d5291aefc4d,
+  CrossbowHunter: {fileID: 48841684950146367, guid: 64a7eee63a604f146842547e826d52db,
     type: 3}
   Crossbow: {fileID: 4716666379934797762, guid: 26b67a79c755fa047b6f6573a07e7407,
     type: 3}
-  GunHunter: {fileID: 6599213477250774876, guid: abecac2219b5d3d4f97de96c84cc5bf8,
-    type: 3}
+  GunHunter: {fileID: 48841684950146367, guid: 64a7eee63a604f146842547e826d52db, type: 3}
   Gun: {fileID: 2176245264565801621, guid: d9bfab05ae8ad0a45bdc402ac2d55b30, type: 3}
 --- !u!4 &1979794872
 Transform:
