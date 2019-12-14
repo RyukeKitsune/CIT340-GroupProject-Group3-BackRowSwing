@@ -81,7 +81,7 @@ public class LichBoss : MonoBehaviour
         {
             GameObject bolt;
             bolt = Instantiate(magicBolt, transform.position + new Vector3(0, Random.Range(-.5f, .5f)), transform.rotation);
-            bolt.GetComponent<Rigidbody2D>().velocity = (new Vector2(attack1Speed * Time.deltaTime * -transform.right.x, 0));
+            bolt.GetComponent<Rigidbody2D>().AddForce(new Vector2(attack1Speed * Time.deltaTime * -transform.right.x, 0));
             StartCoroutine(Die(bolt));
             canAttack = false;
             attackWait = 2;

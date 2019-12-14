@@ -3,6 +3,10 @@ The sprites and animations are just temporary, just something I pulled off from 
 
 If there are any problems, bugs, or weird gameplay mechanics, please let me know and I'll try to fix it ASAP
 
+Free Assets:
+	Bandits Asset Pack: Contributed by Sven Thole
+
+
 Thank You!
 Andrew
 
