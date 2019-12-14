@@ -298,11 +298,16 @@ MonoBehaviour:
   fireRate: 2
   numJumps: 0
   HealthBox: {fileID: 0}
-  Healthform1: {fileID: 0}
-  Healthform2: {fileID: 0}
-  Healthform3: {fileID: 0}
-  Healthform4: {fileID: 0}
-  Healthform5: {fileID: 0}
+  Healthform1: {fileID: 7503640060801925158, guid: 3ac8739e792389745875e2ee95b3758b,
+    type: 3}
+  Healthform2: {fileID: 7295485940784072183, guid: 3ac8739e792389745875e2ee95b3758b,
+    type: 3}
+  Healthform3: {fileID: 2540640229633996305, guid: 3ac8739e792389745875e2ee95b3758b,
+    type: 3}
+  Healthform4: {fileID: -3000768079557559580, guid: 3ac8739e792389745875e2ee95b3758b,
+    type: 3}
+  Healthform5: {fileID: -922439684562402182, guid: 3ac8739e792389745875e2ee95b3758b,
+    type: 3}
   playerFeet: {fileID: 0}
   equipped: {fileID: 0}
   proj: {fileID: 0}
@@ -344,7 +349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1810680142265823406}
-  - component: {fileID: 6654702742412828437}
+  - component: {fileID: 1608381895}
   m_Layer: 11
   m_Name: HealthBox
   m_TagString: Untagged
@@ -360,13 +365,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4626886581195116757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 52521358403518909}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6654702742412828437
+--- !u!212 &1608381895
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
